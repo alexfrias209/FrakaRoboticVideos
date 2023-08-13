@@ -379,9 +379,9 @@
 
       <div style="max-width:1000px">
         <hr>
-        <h1>Experiment 1 - Franka (PyBullet Sim)</h1>
+        <h1>Generalizing to New Environments</h1>
         <p>
-          In This section, we show rollouts of Language-conditioned target cuve grasping policies. We use late fusion and look at different image encoders with a set MLP size and further explor the deeper image encoder models with a +9-layer MLP head. All of these are concatenated with the DistilBERT language encoder.
+          In this section, we show rollouts of learned policies being evaluated in environment configurations outside the distribution of expert robot demonstrations. In our experiments, we evaluate behavioral cloning policies trained on four different combinations of eye-in-hand video data:
         </p>
         <ul style="margin-bottom: 40px;">
           <li><b>robot</b> = robot demos only</li>
@@ -400,16 +400,10 @@
           <div>
             <center style="margin-bottom:5px"><b>robot</b></center>
             <video width="450" autoplay muted loop>
-              <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
+              <source src="resources/videos/toy-packing-env-gen/toy-packing_env-gen_robot-only_rollouts.mp4" type="video/mp4">
             </video>
           </div>
           <div style="background-color: rgba(0, 255, 0, 0.4);">
-            <center style="margin-bottom:5px"><b><u>robot + human w/ mask (ours)</u></b></center>
-            <video width="450" autoplay muted loop>
-              <source src="resources/videos/toy-packing-env-gen/toy-packing_env-gen_robot+human+crop_rollouts.mp4" type="video/mp4">
-            </video>
-          </div>
-            <div style="background-color: rgba(0, 255, 0, 0.4);">
             <center style="margin-bottom:5px"><b><u>robot + human w/ mask (ours)</u></b></center>
             <video width="450" autoplay muted loop>
               <source src="resources/videos/toy-packing-env-gen/toy-packing_env-gen_robot+human+crop_rollouts.mp4" type="video/mp4">
