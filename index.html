@@ -660,10 +660,43 @@
           In this section, we show rollouts of different observation spaces used in a Lift task (grasping) and a Can task (pick-and-place). We are evaluating performance of wrist camera images, 3rd-person camera images, and both wrist + 3rd-person camera images. All clips are sped up by 7x.        </p>
           <h2 style="margin-bottom: 10px; font-style: italic; color: black;">success rate</h2>
 
-          <table style="margin-bottom: 40px; width: 100%; border-collapse: collapse;">
+   
+
+
+      <div class="table-like" style="justify-content:space-evenly;margin:auto;padding:0px;margin-bottom:0px;">
+        <div>
+          <table style="margin-bottom: 40px;   border: 1px solid black;
+          border-radius: 10px; width: 100%; ">
+              <thead>
+                  <tr>
+                    <th style="border-bottom: 1px solid #000; text-align: left;">Lifting Task</th>
+                    <th style="border-bottom: 1px solid #000; text-align: left;"></th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td><b>Wrist camera images</b></td>
+                    <td style="text-align: right;">100%</td>
+                </tr>
+                <tr>
+                    <td><b>3rd person camera images</b></td>
+                    <td style="text-align: right;">100%</td>
+                </tr>
+                <tr>
+                    <td><b>Wrist + 3rd-person camera images</b></td>
+                    <td style="text-align: right;">78%</td>
+                </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <div>
+      
+          <table style="margin-bottom: 40px;   border: 1px solid black;
+          border-radius: 10px; width: 100%; ">
             <thead>
                 <tr>
-                  <th style="border-bottom: 1px solid #000; text-align: left;">Lifting Task</th>
+                  <th style="border-bottom: 1px solid #000; text-align: left;">Can pick-and-place</th>
                   <th style="border-bottom: 1px solid #000; text-align: left;"></th>
                 </tr>
             </thead>
@@ -681,31 +714,12 @@
                   <td style="text-align: right;">78%</td>
               </tr>
           </tbody>
-          
         </table>
-        <table style="margin-bottom: 40px; width: 100%; border-collapse: collapse;">
-          <thead>
-              <tr>
-                <th style="border-bottom: 1px solid #000; text-align: left;">Can pick-and-place</th>
-                <th style="border-bottom: 1px solid #000; text-align: left;"></th>
-              </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <td><b>Wrist camera images</b></td>
-                <td style="text-align: right;">100%</td>
-            </tr>
-            <tr>
-                <td><b>3rd person camera images</b></td>
-                <td style="text-align: right;">100%</td>
-            </tr>
-            <tr>
-                <td><b>Wrist + 3rd-person camera images</b></td>
-                <td style="text-align: right;">78%</td>
-            </tr>
-        </tbody>
-        
-      </table>
+        </div>
+       
+      </div>
+
+
         <h2>Lifting task</h2>
        
         <div class="table-like" style="justify-content:space-evenly;margin:auto;padding:0px;margin-bottom:0px;">
@@ -801,12 +815,73 @@
         <h1 id="section3">Experiment 3 - Franka (Real World)        </h1>
         <p>
           In this section, we show rollouts of different temporal correlation concepts used in a can pick-and-place task and box reorienting and stacking task. We are evaluating performance of stateless Vs. encoding history, Vs. predicting future action sequence using just wrist camera images.        </p>
-          <ul style="margin-bottom: 40px;">
-            <li><b>robot</b> = robot demos only</li>
-            <li><b>robot + play</b> = robot demos + robot play data</li>
-            <li><b>robot + human w/ CycleGAN</b> = robot demos + CycleGAN-translated human demos</li>
-            <li><b style="background-color: rgba(0, 255, 0, 0.4);"><u>robot + human w/ mask (ours)</u></b> = robot demos + human demos with image masking</li>
-          </ul>
+          <h2 style="margin-bottom: 10px; font-style: italic; color: black;">success rate</h2>
+
+          
+                <div class="table-like" style="justify-content:space-evenly;margin:auto;padding:0px;margin-bottom:0px;">
+        <div>
+          <table style="margin-bottom: 40px;   border: 1px solid black;
+          border-radius: 10px; width: 100%; ">
+              <thead>
+                  <tr>
+                    <th style="border-bottom: 1px solid #000; text-align: left;">Lifting Task</th>
+                    <th style="border-bottom: 1px solid #000; text-align: left;"></th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td><b>single-step BC</b></td>
+                    <td style="text-align: right;">100%</td>
+                </tr>
+                <tr>
+                  <td><b>BC-RNN</b></td>
+                  <td style="text-align: right;">100%</td>
+              </tr>
+                <tr>
+                    <td><b>open-loop BC-RNN</b></td>
+                    <td style="text-align: right;">100%</td>
+                </tr>
+                <tr>
+                    <td><b>ACT</b></td>
+                    <td style="text-align: right;">78%</td>
+                </tr>
+            </tbody>
+            
+          </table>
+
+        </div>
+        <div>
+          <table style="margin-bottom: 40px;   border: 1px solid black;
+          border-radius: 10px; width: 100%; ">
+            <thead>
+                <tr>
+                  <th style="border-bottom: 1px solid #000; text-align: left;">Can pick-and-place</th>
+                  <th style="border-bottom: 1px solid #000; text-align: left;"></th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+                  <td><b>single-step BC</b></td>
+                  <td style="text-align: right;">100%</td>
+              </tr>
+              <tr>
+                <td><b>BC-RNN</b></td>
+                <td style="text-align: right;">100%</td>
+            </tr>
+              <tr>
+                  <td><b>open-loop BC-RNN</b></td>
+                  <td style="text-align: right;">100%</td>
+              </tr>
+              <tr>
+                  <td><b>ACT</b></td>
+                  <td style="text-align: right;">78%</td>
+              </tr>
+          </tbody>
+          
+        </table>
+        </div>
+       
+      </div>
         <h2>Can pick-and-place task</h2>
        
         <div class="table-like" style="justify-content:space-evenly;margin:auto;padding:0px;margin-bottom:0px;">
