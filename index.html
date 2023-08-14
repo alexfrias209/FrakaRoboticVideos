@@ -470,15 +470,56 @@
         <p>
           In this section, we show rollouts of Language-conditioned target cube grasping policies. We use late fusion and look at different image encoders with a set MLP size and further explor the deeper image encoder models with a +9-layer MLP head. All of these are concatenated with the DistilBERT language encoder.
         </p>
-        <ul style="margin-bottom: 40px;">
-          <li><b>robot</b> = robot demos only</li>
-          <li><b>robot + play</b> = robot demos + robot play data</li>
-          <li><b>robot + human w/ CycleGAN</b> = robot demos + CycleGAN-translated human demos</li>
-          <li><b style="background-color: rgba(0, 255, 0, 0.4);"><u>robot + human w/ mask (ours)</u></b> = robot demos + human demos with image masking</li>
-        </ul>
-        <p>
-          In our qualitative analysis, we place an emphasis on the toy packing task, which is the most challenging task in this work due to the presence of heavy visual occlusion, 6-DoF robot arm control, and small target objects. We also include some analysis on other tasks afterwards.
-        </p>
+        <h2 style="margin-bottom: 10px; font-style: italic;">success rate</h2>
+
+        <table style="margin-bottom: 40px; width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                  <th style="border-bottom: 1px solid #000; text-align: left;">Model</th>
+                  <th style="border-bottom: 1px solid #000; text-align: left;"></th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+                  <td><b>4-layer CNN</b></td>
+                  <td style="text-align: right;">100%</td>
+              </tr>
+              <tr>
+                  <td><b>ResNet-18, trained from scratch</b></td>
+                  <td style="text-align: right;">100%</td>
+              </tr>
+              <tr>
+                  <td><b>ResNet-18, pre-trained and fine-tuned</b></td>
+                  <td style="text-align: right;">78%</td>
+              </tr>
+              <tr>
+                  <td><b>ResNet-18, trained from scratch (+9 MLP policy layers)</b></td>
+                  <td style="text-align: right;">100%</td>
+              </tr>
+              <tr>
+                  <td><b>ResNet-18, pre-trained and fine-tuned(+9 MLP policy layers)</b></td>
+                  <td style="text-align: right;">100%</td>
+              </tr>
+              <tr>
+                  <td><b>EfficientNet-B4, trained from scratch</b></td>
+                  <td style="text-align: right;">67%</td>
+              </tr>
+              <tr>
+                  <td><b>EfficientNet-B4, pre-trained and fine-tuned</b></td>
+                  <td style="text-align: right;">67%</td>
+              </tr>
+              <tr>
+                  <td><b>EfficientNet-B4, trained from scratch (+9 MLP policy layers)</b></td>
+                  <td style="text-align: right;">100%</td>
+              </tr>
+              <tr>
+                  <td><b>EfficientNet-B4, pre-trained and fine-tuned(+9 MLP policy layers)</b></td>
+                  <td style="text-align: right;">100%</td>
+              </tr>
+          </tbody>
+        </table>
+        
+       
         <h2>Language-conditioned target cube grasping</h2>
         <h3>Shallow Model</h3>
 
@@ -616,11 +657,14 @@
 
         <p>
           In this section, we show rollouts of different observation spaces used in a Lift task (grasping) and a Can task (pick-and-place). We are evaluating performance of wrist camera images, 3rd-person camera images, and both wrist + 3rd-person camera images. All clips are sped up by 7x.        </p>
+          <h2 style="margin-bottom: 10px; list-style-type: none;  font-style: italic;">success rate</h2>
+
           <ul style="margin-bottom: 40px;">
-            <li><b>robot</b> = robot demos only</li>
-            <li><b>robot + play</b> = robot demos + robot play data</li>
-            <li><b>robot + human w/ CycleGAN</b> = robot demos + CycleGAN-translated human demos</li>
-            <li><b style="background-color: rgba(0, 255, 0, 0.4);"><u>robot + human w/ mask (ours)</u></b> = robot demos + human demos with image masking</li>
+  
+            <li><b>4-layer CNN</b> = 100% </li>
+            <li><b>ResNet-18, trained from scratch</b> = 100% </li>
+            <li><b>ResNet-18, pre-trained and fine-tuned(+9 MLP policy layers)</b> = 100% </li>
+          
           </ul>
         <h2>Lifting task</h2>
        
